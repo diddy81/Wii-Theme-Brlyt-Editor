@@ -32,7 +32,7 @@ def behind_channel_inner(r, g, b, a):
 
 		
 def channelborder(r, g, b, a):
-	offset = [0xB05, 0xB5D, 0xC05, 0xC85, 0xD05]
+	offset = [0xB05, 0xB85, 0xC05, 0xC85, 0xD05]
 	with open(common.brlytpath() + "\\my_IplTop_a.brlyt", "r+b") as infile:
 		common.writeloop(infile, offset, r, g, b, a)
 			

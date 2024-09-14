@@ -16,9 +16,9 @@ def setupselbackbtn(r, g, b, a):
 		common.writeloop(infile, offset, r, g, b, a)
 		
 def freeblocks(r, g, b, a):
-	offset = [0x517]
+	offset = [0x515]
 	with open(common.brlytpath() + "\\it_ObjCubeEdit_a.brlyt", "r+b") as infile:
-		common.writeloop(infile, offset, r, g, b, a)
-	offset2 = [0x52F]
+		common.writebackbtnloop(infile, offset, r, g, b, a)
+	offset2 = [0x52D]
 	with open(common.brlytpath() + "\\it_ObjChannelEdit_a.brlyt", "r+b") as infile2:
-		common.writeloop(infile2, offset2, r, g, b, a)
+		common.writebackbtnloop(infile2, offset2, r, g, b, a)

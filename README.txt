@@ -1,4 +1,4 @@
-Wii-Theme-Brlyt-Editer
+Wii-Theme-Brlyt-Editor
 ======================
 
 Easily edit Wii theme brlyt colours

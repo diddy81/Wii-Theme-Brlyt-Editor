@@ -35,7 +35,7 @@ class PageSeven(wx.Panel):
 	def __init__(self, parent):
 		wx.Panel.__init__(self, parent)
 
-version = "1.0"
+version = "1.3"
 
 class diddy81(wx.Frame):
 
@@ -99,7 +99,7 @@ class diddy81(wx.Frame):
 					
 		pickmem = [ 'Back Btn Colour', 'Back Btn Text', 'Main Btn Text', 'Free Blocks Text']
 					
-		pickhome = ['Dialog Text', 'Dialog Btn Colour', 'Dialog Btn Border', 'Dialog Btn Text', 'Close Btn Colour']
+		pickhome = ['Dialog Text', 'Dialog Btn Colour', 'Dialog Btn Border', 'Dialog Btn Text', 'Close Btn Colour', 'Close Btn Text']
 					
 		pickmisc = ['Back & Post Btn Colour in Messageboard', 'Back & Post Btn Border in Messageboard', 'Back & Post Btn Text in Messageboard']
 		
@@ -159,7 +159,7 @@ class diddy81(wx.Frame):
 		close=wx.Button(page1, -1,"Close",(190,115),(100,30))
 		self.Bind(wx.EVT_BUTTON, self.closebutton, close)
 		
-		thememii=wx.Button(page1, -1, "Download Thememii Mod", (10,55), (130,25))
+		thememii=wx.Button(page1, -1, "Download Thememii Mod", (10,55), (145,25))
 		thememii.Bind(wx.EVT_BUTTON, self.downthememii)
 		
 		aboutme=wx.Button(page1, -1, "About", (10,100), (100,25))
@@ -410,6 +410,11 @@ class diddy81(wx.Frame):
 									
 				elif self.selectedhome == 'Close Btn Colour':
 					homebtn1.homeclosebtncolour(r, g, b, a)
+					self.onInfo()
+									
+				elif self.selectedhome == 'Close Btn Text':
+					homebtn1.homeclosebtntext(r, g, b, a)
+					self.onInfo()
 				
 			except:
 				self.patherror2()
@@ -612,13 +617,13 @@ class diddy81(wx.Frame):
 		info.Description = wordwrap(
 			"This program is designed to be used in conjunction with the Wii Theme Team Base Pack and Thememii MOD \n\n Some functions may work with other theme bases but not all \n\n If you dont have the base pack you can download it from the link below\n\n  First thing you need to do is set your brlyt folder",
 			420, wx.ClientDC(self.panel))
-		info.WebSite = ("http://dl.dropboxusercontent.com/u/6942312/code/Wii-Theme-Brlyt-Editor/Wii%20Theme%20Team%20Base%20Pack.rar", "Wii Theme Team Base Pack")
+		info.WebSite = ("https://www.dropbox.com/s/9j7sbrrxrenz0ij/Wii%20Theme%20Team%20Base%20Pack.rar?dl=1", "Wii Theme Team Base Pack")
 		info.Developers = ["Diddy81"]
 		# Show the wx.AboutBox
 		wx.AboutBox(info)
 			
 	def downthememii(self, event):
-		webbrowser.open('http://dl.dropboxusercontent.com/u/6942312/code/Wii-Theme-Brlyt-Editor/Thememii_MOD.rar', new=0, autoraise=True)
+		webbrowser.open('https://www.dropbox.com/s/8654u43ioxjhvmr/Thememii_MOD.rar?dl=1', new=0, autoraise=True)
 			
 	# start of messages here
 	def selectionerror(self):
@@ -653,8 +658,8 @@ class diddy81(wx.Frame):
 	# i dont know if this program will ever need a update but its worth putting this in anyway
 	def checkupdate(self):
 		try:
-			ur = urlopen("http://dl.dropboxusercontent.com/u/6942312/code/Wii-Theme-Brlyt-Editor/update.txt")
-			contents = ur.readline()
+			ur = urlopen("https://pastebin.com/raw/ugrAshDE")
+			contents = ur.readline()			
 			if contents != version:
 				self.newupdate()
 		except:
@@ -665,7 +670,7 @@ class diddy81(wx.Frame):
 							"Update", wx.YES_NO|wx.ICON_EXCLAMATION)
 		retCode = dlg.ShowModal()
 		if (retCode == wx.ID_YES):
-			webbrowser.open('http://dl.dropboxusercontent.com/u/6942312/code/Wii-Theme-Brlyt-Editor/Theme%20Brlyt%20Editor.exe', new=0, autoraise=True)
+			webbrowser.open('https://www.dropbox.com/s/9oiord3mnnh26xt/Theme%20Brlyt%20Editor.exe?dl=1', new=0, autoraise=True)
 			self.Destroy()
 
 if __name__ == "__main__":

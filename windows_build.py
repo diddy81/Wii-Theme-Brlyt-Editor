@@ -2,7 +2,7 @@ from distutils.core import setup
 from py2exe.build_exe import py2exe
 import os, os.path, shutil, sys
 
-current = '1.0'
+current = '1.3'
 
 dir = 'distrib/windows'
 

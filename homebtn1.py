@@ -1,7 +1,7 @@
 import common
 
 def homedialogtext(r, g, b, a):
-	offset = [0x1089, 0x10E9, 0x1149, 0x11A9, 0x1209, 0x1269, 0x12C9, 0x1329, 0x1389, 0x13E9, 0x2EF1]
+	offset = [0x2E51]
 	with open(common.brlytpath() + "\\th_HomeBtn_d.brlyt", "r+b") as infile:
 		common.writeloop(infile, offset, r, g, b, a)
 		
@@ -24,3 +24,8 @@ def homeclosebtncolour(r, g, b, a):
 	offset = [0x35F9, 0x3659, 0x36B9]
 	with open(common.brlytpath() + "\\th_HomeBtn_d.brlyt", "r+b") as infile:
 		common.writebackbtnloop(infile, offset, r, g, b, a)
+		
+def homeclosebtntext(r, g, b, a):
+	offset = [0x2551]
+	with open(common.brlytpath() + "\\th_HomeBtn_d.brlyt", "r+b") as infile:
+		common.writeloop(infile, offset, r, g, b, a)
